@@ -35,6 +35,13 @@ DELETE /passengers/{id}
 
 <img width="280" height="364" alt="image" src="https://github.com/user-attachments/assets/9023fab3-b541-4716-b86f-7779297d10bb" />
 
+Registros JSON
+
+Usando Gateway
+<img width="822" height="101" alt="image" src="https://github.com/user-attachments/assets/eb39e7ad-f7e6-45a1-bc07-9e142c021587" />
+Mediante microservicio
+<img width="835" height="116" alt="image" src="https://github.com/user-attachments/assets/0ad43b84-97d0-4b85-9869-814a0c908c90" />
+
 
 **Colección en base de datos:**
 `passengers`
@@ -59,6 +66,12 @@ GET /drivers/nearby?lat={lat}&lng={lng}
 
 <img width="253" height="356" alt="image" src="https://github.com/user-attachments/assets/4a739093-2156-4ead-b8d8-5fdb98061080" />
 
+Drivers en BD vía Gateway
+<img width="817" height="108" alt="image" src="https://github.com/user-attachments/assets/5d6f3daa-ffcb-4fff-91d9-e9e06fb0ce95" />
+
+Vía microservicio 
+<img width="805" height="108" alt="image" src="https://github.com/user-attachments/assets/a9d822ec-4e87-4825-989c-8db39d4dcdd8" />
+
 
 **Colección en base de datos:**
 `drivers`
@@ -78,6 +91,10 @@ PUT /trip/{id}
 DELETE /trip/{id}
 
 <img width="257" height="336" alt="image" src="https://github.com/user-attachments/assets/198bb33b-de32-49d7-b415-742e8dfcd393" />
+
+Formato JSON para viajes (trips)
+
+{"id":1,"passengerId":1,"driverId":1,"origin":"Calle 10 #5-20","destination":"Avenida 30 #15-80","cost":25000}
 
 
 **Colección en base de datos:**
@@ -208,3 +225,4 @@ networks:
     driver: bridge
 
 ```
+
