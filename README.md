@@ -38,8 +38,10 @@ DELETE /passengers/{id}
 Registros JSON
 
 Usando Gateway
+
 <img width="822" height="101" alt="image" src="https://github.com/user-attachments/assets/eb39e7ad-f7e6-45a1-bc07-9e142c021587" />
 Mediante microservicio
+
 <img width="835" height="116" alt="image" src="https://github.com/user-attachments/assets/0ad43b84-97d0-4b85-9869-814a0c908c90" />
 
 
@@ -67,9 +69,11 @@ GET /drivers/nearby?lat={lat}&lng={lng}
 <img width="253" height="356" alt="image" src="https://github.com/user-attachments/assets/4a739093-2156-4ead-b8d8-5fdb98061080" />
 
 Drivers en BD vía Gateway
+
 <img width="817" height="108" alt="image" src="https://github.com/user-attachments/assets/5d6f3daa-ffcb-4fff-91d9-e9e06fb0ce95" />
 
 Vía microservicio 
+
 <img width="805" height="108" alt="image" src="https://github.com/user-attachments/assets/a9d822ec-4e87-4825-989c-8db39d4dcdd8" />
 
 
@@ -225,4 +229,5 @@ networks:
     driver: bridge
 
 ```
+
 
