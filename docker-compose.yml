@@ -1,0 +1,68 @@
+services:
+  mongo:
+    image: mongo:6
+    container_name: ms_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - aygo-net
+
+  ms-passenger:
+    build: ./ms-passenger
+    image: ms-passenger:latest
+    container_name: ms_passenger
+    depends_on:
+      - mongo
+    ports:
+      - "4081:4081"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/transportdb
+    networks:
+      - aygo-net
+      
+  ms-driver:
+    build: ./ms-driver
+    image: ms-driver:latest
+    container_name: ms_driver    
+    depends_on:
+      - mongo
+    ports:
+      - "4082:4082"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/transportdb
+    networks:
+      - aygo-net
+
+  ms-trip:
+    build: ./ms-trip
+    image: ms-trip:latest
+    container_name: ms_trip
+    depends_on:
+      - mongo
+    ports:
+      - "4083:4083"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/transportdb
+    networks:
+      - aygo-net
+      
+  gateway:
+    build: ./gateway
+    image: gateway:latest
+    container_name: ms_gateway
+    depends_on:
+      - ms-passenger
+      - ms-driver      
+    ports:
+      - "7080:7080"
+    networks:
+      - aygo-net
+
+volumes:
+  mongo-data:
+
+networks:
+  aygo-net:
+    driver: bridge

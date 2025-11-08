@@ -1,0 +1,46 @@
+ms-passenger/
+├── pom.xml
+├── src/
+│   └── main/
+│       ├── java/aygo/ms/mspassenger/
+│       │   ├── MsPassengerApplication.java
+│       │   ├── controller/PassengerController.java
+│       │   ├── model/Passenger.java
+│       │   └── repository/PassengerRepository.java
+│       └── resources/
+│           └── application.yml
+├── Dockerfile
+└── docker-compose.yml
+
+puertos
+server:
+  port: 5081
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongo:27017/transportdb
+	  
+----
+
+=> ERROR [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-alpine          0.6s
+
+Solucion 
+
+docker pull eclipse-temurin:17-jdk-alpine
+
+Bajar contenedor y volver a subir limpiando las imágenes
+docker-compose down
+docker-compose up -d --build
+
+Dependencias:
+
+Spring Web
+
+Spring Data MongoDB
+
+Spring Boot Actuator
+
+docker compose up --build -d
+
+usar -d para ejecutar comandos (segundo plano)
